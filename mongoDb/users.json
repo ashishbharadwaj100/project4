@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5e2c1c3e427b6b2b10073bb3"},"id_number":"434","email":"fd@d","password":"1","city":"fd","street":"fd","u_name":"a","f_name":"admin","l_name":"fd","role":{"$numberInt":"1"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31a82094abb81550eab359"},"id_number":"43","email":"fdf@dfa.com","password":"1","city":"fds","street":"fds","u_name":"b","f_name":"b","l_name":"b","role":{"$numberInt":"0"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31a9df94abb81550eab35b"},"id_number":"4334","email":"fd@da.com","password":"1","city":"gj","street":"hgh","u_name":"g","f_name":"g","l_name":"g","role":{"$numberInt":"0"},"__v":{"$numberInt":"0"}}

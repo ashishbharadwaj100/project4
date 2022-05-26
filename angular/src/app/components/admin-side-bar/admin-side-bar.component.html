@@ -1,0 +1,55 @@
+
+<div class="container">
+   
+    <div class="row">
+        <div>
+          <button *ngIf="this.newProduct" type="button" (click)="addProduct()"><h5>+</h5></button>
+        </div>
+          <div *ngIf="!this.newProduct">
+            <app-admin-side-bar-add-product></app-admin-side-bar-add-product>
+           
+           </div>
+           <div *ngIf="this.newProduct">
+           <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Product Name</label>
+                <!-- {{adminProductData.name}} -->
+                <input type="text" formControlName="name" class="form-control" [(ngModel)]="adminProductData.name"
+                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                    <div *ngIf="f.name.errors.required">Product Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Product Price</label>
+                <input type="number" formControlName="price" class="form-control" [(ngModel)]="adminProductData.price"
+                    [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+                <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                    <div *ngIf="f.price.errors.required">Product price is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Product Catagory</label>
+               
+                <select formControlName="catagory"  class="form-control"  [(ngModel)]="catagory">
+                  <option *ngFor="let cat of catagoryList" [value]="cat.id">
+                  <h1>{{cat.name}}</h1>
+                  </option>
+              </select>
+              <!-- [(ngModel)]="catagory.name" -->
+                <div *ngIf="submitted && f.catagory.errors" class="invalid-feedback">
+                    <div *ngIf="f.catagory.errors.required">Product catagory is required</div>
+                </div>
+              </div>
+           
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">Edit Product</button>
+                <!-- <button class="btn btn-primary mr-1" (click)="cancel()">Cancel</button> -->
+            </div>
+
+        </form>
+    </div>
+           </div>
+    </div>
+   
+

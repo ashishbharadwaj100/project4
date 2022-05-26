@@ -1,0 +1,14 @@
+{"_id":{"$oid":"5dd809e9f78e6f2d70441897"},"name":"cola","price":{"$numberInt":"6"},"catagory":{"$oid":"5dd7fd95f78e6f2d70441893"}}
+{"_id":{"$oid":"5dd80aabf78e6f2d70441899"},"name":"grouper","price":{"$numberInt":"100"},"catagory":{"$oid":"5dd7fd8bf78e6f2d70441892"}}
+{"_id":{"$oid":"5de123bc663f591b340f93c6"},"name":"amberjack","price":{"$numberInt":"120"},"catagory":{"$oid":"5dd7fd8bf78e6f2d70441892"}}
+{"_id":{"$oid":"5e30689d94abb81550eab34b"},"name":"grape","price":{"$numberInt":"2"},"catagory":{"$oid":"5dd7fd5af78e6f2d70441891"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b8df94abb81550eab366"},"name":"milk","price":{"$numberInt":"3"},"catagory":{"$oid":"5dcffe2ac453ef3f1c174ee9"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b8e994abb81550eab367"},"name":"eggs","price":{"$numberInt":"3"},"catagory":{"$oid":"5dcffe2ac453ef3f1c174ee9"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b91194abb81550eab368"},"name":"milk % 5","price":{"$numberInt":"5"},"catagory":{"$oid":"5dcffe2ac453ef3f1c174ee9"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b92894abb81550eab369"},"name":"tomatto","price":{"$numberInt":"2"},"catagory":{"$oid":"5dd7fd5af78e6f2d70441891"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b93c94abb81550eab36a"},"name":"orange","price":{"$numberInt":"3"},"catagory":{"$oid":"5dd7fd5af78e6f2d70441891"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b94f94abb81550eab36b"},"name":"banana","price":{"$numberInt":"8"},"catagory":{"$oid":"5dd7fd5af78e6f2d70441891"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b96e94abb81550eab36c"},"name":"salomon","price":{"$numberInt":"60"},"catagory":{"$oid":"5dd7fd8bf78e6f2d70441892"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b97c94abb81550eab36d"},"name":"chicken","price":{"$numberInt":"20"},"catagory":{"$oid":"5dd7fd8bf78e6f2d70441892"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b98594abb81550eab36e"},"name":"beef","price":{"$numberInt":"30"},"catagory":{"$oid":"5dd7fd8bf78e6f2d70441892"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e31b99094abb81550eab36f"},"name":"wine","price":{"$numberInt":"10"},"catagory":{"$oid":"5dd7fd95f78e6f2d70441893"},"__v":{"$numberInt":"0"}}

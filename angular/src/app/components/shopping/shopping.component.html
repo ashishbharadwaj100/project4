@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="col-sm-4">
+<nav class="navbar navbar-expand-sm sm-dark navbar-dark">
+  <div>
+   <div class="search-container">
+    <button (click)="searchProduct(search.value)" style="float: right;padding: 5px;" type="button"><i class="fa fa-search"></i></button>
+    <input type="text" class="fa fa-search" style="padding: 5px 10px;" placeholder="Search" #search />
+    </div>
+   </div>
+  </nav>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+      <div *ngIf="!this._AuthService.isAdmin"> 
+       <h4>My Cart</h4>            
+        <div class="container">
+          <app-cart-side-bar></app-cart-side-bar>
+       </div>
+      </div>
+      <div *ngIf="this._AuthService.isAdmin"> 
+       
+       <h5>Edit or Add Products</h5> 
+         <div class="container">
+          
+           <app-admin-side-bar></app-admin-side-bar>
+        </div>
+       </div>
+    </div>
+         <div class="col-sm-9">
+          <div *ngIf="!this._ApiService.orderIsHidden">   
+            <div class="container">
+              
+           <app-order></app-order>
+         </div>
+       </div>
+       <div *ngIf="this._ApiService.shoopingIsHidden">
+        <ul class="nav">
+           
+          <li class="nav-item">
+            
+    <button (click)="assignComponent('milkNeggs')" type="button" class="btn btn-light">Milk & Eggs</button>
+    <button (click)="assignComponent('vegetablesNfruits')" type="button" class="btn btn-light">Vegetables & Fruits</button>
+    <button (click)="assignComponent('meatNfish')" type="button" class="btn btn-light">Meat & Fish</button>
+    <button (click)="assignComponent('wineNdrinks')" type="button" class="btn btn-light">Wine & Drinks</button>     
+          </li>
+        </ul>
+      
+         <ng-container *ngComponentOutlet="catagoryComponent"></ng-container>
+         
+           </div>
+          </div>    
+        </div>
+       
+          
+        

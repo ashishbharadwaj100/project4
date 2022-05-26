@@ -1,0 +1,56 @@
+<div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+        
+                <a *ngIf="this._authService.isCartOpen" routerLink="/shopping"  href="#"><h6>Resume Shopping</h6></a>
+                <a *ngIf="this._authService.isCartNotExist" routerLink="/shopping"  href="#"><h6>Start Shopping</h6></a>
+                <a *ngIf="this._authService.isAdmin" routerLink="/shopping"  href="#"><h6>Start Edit</h6></a>
+                <h4>Registered?</h4>
+
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                  <div class="form-group">
+                    <label>User Name</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">username is required</div>
+                        
+                    </div>
+                    
+                </div>
+                  <div class="form-group">
+                      <label>Password</label>
+                      <input type="text" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                          <div *ngIf="f.password.errors.required">password is required</div>
+                          
+                      </div>
+                  </div>
+                  <div class="text-center">
+                    <h6 *ngIf="this._authService.isUserNameNpasswordOK">Wrong Username or Password</h6>
+                  </div>
+                    
+                 <div class="row">
+                  <a routerLink="/register" class="btn btn-primary mr-2" routerLinkActive="active">Register</a>
+                        <br>
+                 
+                      <button class="btn btn-primary mr-2">Login</button>
+                    </div>
+              </form>
+                       
+                      
+                      
+            </div>
+            <div class="col-sm-4">
+              <div class="card-body">
+              <h3>Hello! <br> This is Online E-commerce Shop</h3> <br>
+              <h5>In our site you can shop from Many products, order them and Send anywere on the world!</h5>
+             </div>
+            </div>
+            <div class="col-sm-4">
+                    
+                    Available Products in Our Store - {{productQun}}<br>
+                    Qunantity Of Orders from our Store - {{orderQun}}
+                    </div>
+    </div>
+   </div>
+

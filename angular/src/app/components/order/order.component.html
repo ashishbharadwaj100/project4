@@ -1,0 +1,52 @@
+<!-- main app container -->
+<div class="col-sm-6">
+    <h5 class="card-header">Order</h5>
+    <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+             
+                <div class="form-group col-sm-6">
+                    <label>City</label>
+                    <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                    <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                        <div *ngIf="f.city.errors.required">City is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label>Street</label>
+                    <input type="text" formControlName="street" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.street.errors }" />
+                    <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+                        <div *ngIf="f.street.errors.required">Street is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Shipping Date</label>
+                <input type="date" formControlName="date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+                <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                    <div *ngIf="f.date.errors.required">Date is required</div>
+                    <div *ngIf="f.date.errors.date"> Must be a valid Date</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Credit Card</label>
+                    <input type="text" formControlName="creditcard" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.creditcard.errors }" />
+                    <div *ngIf="submitted && f.creditcard.errors" class="invalid-feedback">
+                        <div *ngIf="f.creditcard.errors.required">Last 4 Digit of Credit Card is required</div>
+                        <div *ngIf="f.creditcard.errors.minlength"> Must be 4 Digit</div>
+                        <div *ngIf="f.creditcard.errors.maxlength"> Must be 4 Digit</div>
+                    </div>
+                </div>
+            </div>
+             
+            <div class="text-center">
+                <button  class="btn btn-primary mr-1">Order</button>
+            </div>
+        </form>
+    </div>
+   
+</div>
+  
+
+

@@ -1,0 +1,37 @@
+<div class="text-center">
+    <!-- <h1>Drag and pull the edges of the rectangle</h1> -->
+   
+     <!-- *ngIf="this._ApiService.shoopingIsHidden" -->
+    <div class="container">
+      <button *ngIf="!this._ApiService.shoopingIsHidden" (click)="shooping()" type="button">Return To Shooping</button>
+        <div class="row">
+           <div *ngFor='let cart of UserCart'>
+             
+             <ul class="list-group">
+             <li class="list-group-item list-group-item-success">Product Name:{{cart.product.name}} <br>
+              Quantity:{{cart.quantity}} <br>
+            Price:{{cart.product.price}} <button *ngIf="this._ApiService.shoopingIsHidden" (click)="deleteItem(cart)" aria-label="Close" class="close" type="button">
+              <span aria-hidden="true">×</span>
+                    </button></li>
+                 
+              
+                                  
+               
+                              </ul>
+            </div>
+            <div class="container">
+              <p>Total Price: {{TotalPrice}}</p>
+            <div class="row" *ngIf="this._ApiService.shoopingIsHidden">
+              
+          
+              <button (click)="order()" class="btn btn-primary" type="button">Order</button>
+              <br>
+              <button (click)="deleteAllItems()" class="btn btn-danger" type="button">Delete All Items</button>
+            </div>
+        </div>
+        </div>
+        </div>
+          
+          
+      </div>
+   

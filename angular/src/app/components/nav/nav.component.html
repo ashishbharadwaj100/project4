@@ -1,0 +1,8 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <ul class="navbar-nav ml-auto">
+         
+            <li><a *ngIf="!this._authService.isLogIn" routerLink="/login" class="nav-link" href="#">Login</a></li> 
+            <li><a *ngIf="this._authService.isLogIn" routerLink="/login" class="nav-link" href="#" (click)="logout()">{{this._authService.name}} - Logout</a></li>
+            
+        </ul>
+      </nav>

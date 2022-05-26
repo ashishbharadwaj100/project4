@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Quantity</h2>
+
+<!-- <input placeholder="Enter Quantity" style="width:120px"  type="number" value="" min="0" max="100"/>
+
+<mat-form-field>
+        <input [(ngModel)]="data.name" matInput>
+    </mat-form-field> -->
+
+<button mat-raised-button *ngIf="!quantity.invalid" (click)="save()">Save</button>
+<button mat-raised-button (click)="cancel(value)">Cancel</button>
+
+<div class="example-container">
+        <b>Value From Page</b>:{{fromPage.name}}
+        <mat-form-field>
+          
+          <input matInput type="number" min="1" max="1000" [formControl]="quantity" placeholder="Enter Quantity" required>
+        <mat-error *ngIf="quantity.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    
+        
+      </div>
+      
