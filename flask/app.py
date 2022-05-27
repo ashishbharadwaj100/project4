@@ -26,22 +26,37 @@ def hello_world():
 def getProducts():
     if request.method == 'GET':
         allData = db['products'].find()
-        print(allData)
-    dataJson = []
-    for data in allData:
-        id = data['_id']
-        name = data['name']
-        price = data['price']
+        allData1 = db['products'].aggregate([
+            {
+                '$lookup': {
+                    'from': 'catagories',
+                    'localField': 'catagory',
+                    'foreignField': '_id',
+                    'as': 'joinedResult'
+                }
+            }
 
-        dataDict = {
-            'id': str(id),
-            'name': name,
-            'price': price,
-        }
 
-        dataJson.append(dataDict)
-    print(dataJson)
-    return jsonify(dataJson)
+        ])
+        print("allData1", list(allData1))
+        
+        return jsonify(allData1)
+        # print("allData", allData)
+    # dataJson = []
+    # for data in allData:
+    #     id = data['_id']
+    #     name = data['name']
+    #     price = data['price']
+
+    #     dataDict = {
+    #         'id': str(id),
+    #         'name': name,
+    #         'price': price,
+    #     }
+
+    #     dataJson.append(dataDict)
+    # # print(dataJson)
+    # return jsonify(dataJson)
 
 
 # @app.route('/users', methods=['POST', 'GET'])
